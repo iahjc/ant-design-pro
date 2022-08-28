@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+<body>
+    <div class="g-ant">
+        <div class="g-ant__sider">
+            <div class="g-ant-sider__wrap g-ant-sider__wrap--fixed">
+                <div class="g-ant-sider__head">
+                    <a class="m-logo" href="#">
+                        <img src="./static/logo.svg"/>
+                        <h1>Ant Design Pro</h1>
+                    </a>
+                </div>
+                <ul class="g-ant-sider__main">
+                    <li class="m-menu m-menu--selected">
+                        <div class="m-menu__title">
+                            <i class="iconfont icon-car"></i>
+                            <span>Dashboard</span>
+                            <i class="iconfont icon-arrowup"></i>
+                        </div>
+                        <ul class="m-menu__sub">
+                            <li>分析页</li>
+                            <li class="m-menu__sub--selected">控制页</li>
+                            <li>工作台</li>
+                        </ul>
+                    </li>
+
+                    <li class="m-menu">
+                        <div class="m-menu__title">
+                            <i class="iconfont icon-car"></i>
+                            <span>Dashboard</span>
+                            <i class="iconfont icon-arrowdown"></i>
+                        </div>
+                        <ul class="m-menu__sub">
+                            <li>分析页</li>
+                            <li>控制页</li>
+                            <li>工作台</li>
+                        </ul>
+                    </li>
+
+                    <li class="m-menu">
+                        <div class="m-menu__title">
+                            <i class="iconfont icon-car"></i>
+                            <span>Dashboard</span>
+                            <i class="iconfont icon-arrowdown"></i>
+                        </div>
+                        <ul class="m-menu__sub">
+                            <li>分析页</li>
+                            <li>控制页</li>
+                            <li>工作台</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="g-ant-sider__foot">
+                    <i class="iconfont icon-outdent u-bar"></i>
+                </div>
+            </div>
+        </div>
+        <div class="g-ant__main">
+
+        </div>
+    </div>
+
+    <script>
+        let menuTitles = document.querySelectorAll(".m-menu__title")
+        for(let i = 0; i < menuTitles.length; i++) {
+            menuTitles[i].onclick = function() {
+                let menu = this.parentElement
+                menu.classList.toggle("m-menu--selected")
+                if( menu.className.includes('m-menu--selected') ) {
+                    // 打开状态
+                    let arrow = this.querySelector('[class*="icon-arrow"]')
+                    arrow.className = 'iconfont icon-arrowup'
+                } else {
+                    let arrow = this.querySelector('[class*="icon-arrow"]')
+                    arrow.className = 'iconfont icon-arrowdown'
+                }
+            }
+        }
+
+        document.querySelector(".u-bar").onclick = function () {
+
+        }
+    </script>
+</body>
+</html>
